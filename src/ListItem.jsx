@@ -2,11 +2,19 @@ import { formatDistance } from 'date-fns'
 
 export default function ListItem({ item }) {
   return (
-    <article className="flex items-start space-x-6 p-6 bg-white rounded-xl shadow-xl ring-1 ring-slate-900/5 ">
-      <img src={item.owner?.avatar_url} alt="" width="60" height="88" className="flex-none rounded-md bg-slate-100" />
+    <article className="gh-list-item flex items-start space-x-6 p-6 bg-white rounded-xl shadow-xl ring-1 ring-slate-900/5 ">
+      <img
+        src={item.owner?.avatar_url}
+        alt=""
+        width="60"
+        height="88"
+        className="flex-none rounded-md bg-slate-100"
+      />
       <div className="min-w-0 relative flex-auto">
-        <a href={item.homepage} target='_blank' rel="noopener noreferrer">
-          <h2 className="cursor-pointer text-left hover:text-indigo-700 font-semibold text-xl text-slate-900 truncate pr-20">{item.name}</h2>
+        <a href={item.homepage} target="_blank" rel="noopener noreferrer">
+          <h2 className="cursor-pointer text-left hover:text-indigo-700 font-semibold text-xl text-slate-900 truncate pr-20">
+            {item.name}
+          </h2>
         </a>
         <dl className="mt-2 flex flex-wrap text-sm leading-6 font-medium">
           <div className="absolute top-0 right-0 flex items-center space-x-1">
@@ -20,16 +28,28 @@ export default function ListItem({ item }) {
           </div>
           <div>
             <dt className="sr-only">Rating</dt>
-            <dd className="px-1.5 ring-1 ring-slate-200 rounded">{item.license?.name || 'No License'}</dd>
+            <dd className="px-1.5 ring-1 ring-slate-200 rounded">
+              {item.license?.name || "No License"}
+            </dd>
           </div>
           <div className="ml-2">
             <dt className="sr-only">Year</dt>
-            <dd>{formatDistance(new Date(item.pushed_at), new Date(), { addSuffix: true })}</dd>
+            <dd>
+              {formatDistance(new Date(item.pushed_at), new Date(), {
+                addSuffix: true,
+              })}
+            </dd>
           </div>
           <div>
             <dt className="sr-only">Genre</dt>
             <dd className="flex items-center">
-              <svg width="2" height="2" fill="currentColor" className="mx-2 text-slate-300" aria-hidden="true">
+              <svg
+                width="2"
+                height="2"
+                fill="currentColor"
+                className="mx-2 text-slate-300"
+                aria-hidden="true"
+              >
                 <circle cx="1" cy="1" r="1" />
               </svg>
               {item.genre}
@@ -38,7 +58,13 @@ export default function ListItem({ item }) {
           <div>
             <dt className="sr-only">Runtime</dt>
             <dd className="flex items-center">
-              <svg width="2" height="2" fill="currentColor" className="mx-2 text-slate-300" aria-hidden="true">
+              <svg
+                width="2"
+                height="2"
+                fill="currentColor"
+                className="mx-2 text-slate-300"
+                aria-hidden="true"
+              >
                 <circle cx="1" cy="1" r="1" />
               </svg>
               {item.runtime}
@@ -51,5 +77,5 @@ export default function ListItem({ item }) {
         </dl>
       </div>
     </article>
-  )
+  );
 }
