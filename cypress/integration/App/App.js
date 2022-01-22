@@ -33,5 +33,5 @@ When("I click the logout button", () => {
 });
 
 Then("I should be logged out", () => {
-  cy.url().should("equal", `${Cypress.env("baseUrl")}/login`);
+  cy.url().should("equal", `${Cypress.env("baseUrl")}/#/login`);
 });

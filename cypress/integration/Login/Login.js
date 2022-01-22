@@ -18,7 +18,7 @@ Before(() => {
 });
 
 Given("I am on the login page", () => {
-  cy.visit(`${baseUrl}/login`);
+  cy.visit(`${baseUrl}/#/login`);
 });
 
 When(
@@ -41,7 +41,7 @@ And("I click on the login button", () => {
 });
 
 Then("I should be logged in", () => {
-  cy.url().should("equal", `${Cypress.env("baseUrl")}/`);
+  cy.url().should("equal", `${Cypress.env("baseUrl")}/#/`);
 });
 
 Then("I should see the email required error", () => {
