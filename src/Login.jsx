@@ -7,9 +7,9 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
-  const onSubmit = data => {
+  const onSubmit = (data) => {
     logIn(data.email, data.password);
-    navigate('/');
+    navigate("/");
   };
   const logIn = useAppStore(state => state.logIn);
   return (

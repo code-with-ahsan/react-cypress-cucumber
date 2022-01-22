@@ -13,7 +13,7 @@ function App() {
   console.log(projects);
   useEffect(() => {
     if (!isLoggedIn) {
-      navigate("/login");
+      navigate(`/login`);
     } else {
       getProjects();
     }
