@@ -3,6 +3,7 @@
   "ignoreTestFiles": "**/examples/*",
   "viewportHeight": 760,
   "viewportWidth": 1080,
+  "testFiles": "**/*.feature",
   "env": {
     "baseUrl": "http://localhost:3000"
   }

@@ -17,10 +17,14 @@
     "react-router-dom": "^6.2.1",
     "zustand": "^3.6.9"
   },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
     "autoprefixer": "^10.4.2",
     "cypress": "^9.3.1",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "postcss": "^8.4.5",
     "tailwindcss": "^3.0.15",
     "vite": "^2.7.2"
